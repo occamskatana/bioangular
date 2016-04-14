@@ -3,7 +3,7 @@
 <div class="container-fluid">
 	<input type="text" ng-model="todo.title"> <button class="btn btn-primary btn-outline" ng-click="addTodo(todo.title)">Submit</button>
 
-	<div class="container todos" ng-repeat="todo in todos">
-			{{todo}}
-	</div>
+	<ul class="list-group">
+		<li class="list-group-item" ng-repeat="todo in todos">	{{todo.title}} </li>
+	</ul>
 </div>

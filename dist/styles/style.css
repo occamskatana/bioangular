@@ -1,0 +1,17 @@
+ul :nth-child(even){
+  background-color: #dcdcdc;
+}
+ul :nth-child(odd){
+  background-color: #aaaaaa;
+}
+
+li {
+	min-height: 70px;
+	font-family: serif;
+	font-weight: 700;
+	
+}
+
+html {
+	height: 100%;
+}
