@@ -11,6 +11,12 @@
 					url: '/',
 					controller: 'TodoCtrl',
 					templateUrl: 'templates/home.html'
+				})
+
+				.state('old', {
+					url:'/old',
+					controller: 'TodoCtrl',
+					templateUrl: 'templates/old.html'
 				});
 	}
 

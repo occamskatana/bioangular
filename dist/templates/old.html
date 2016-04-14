@@ -1,0 +1,12 @@
+<div class="container-fluid header">
+	<h1 align="center">
+		Old Todos
+	</h1>
+	<a ui-sref="landing"><button class="btn btn-success">Current Todos</button></a><br />
+</div>
+
+<div class="container-fluid old-todos">
+	<ul class="list-group">
+		<li class="list-group-item" ng-repeat="todo in todos" ng-hide="old(todo) !== true">	{{todo.title}} </li>
+	</ul>
+</div>
