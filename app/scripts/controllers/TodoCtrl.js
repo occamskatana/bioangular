@@ -4,7 +4,11 @@
 		$scope.todos = $firebaseArray(ref);
 
 		$scope.addTodo = function(todo){
-			$scope.todos.$add({title: todo});
+			$scope.todos.$add({title: todo, date: Firebase.ServerValue.TIMESTAMP, completed: false });
+		}
+
+		$scope.old = function(todo){
+		return	Date.now() - todo.date >=  (7 * 24 * 3600 * 1000)
 		}
 
 		$scope.todo;
