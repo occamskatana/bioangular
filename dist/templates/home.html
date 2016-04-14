@@ -3,10 +3,21 @@
 
 
 <div class="container-fluid current-nav">
-	<input type="text" ng-model="todo.title"> <button class="btn btn-primary btn-outline" ng-click="addTodo(todo.title)">Submit</button>
+	
+				<input type="text" ng-model="todo.title" class="" placeholder="Todo Name"><br></span><select name="Priority Select" ng-model="todo.priority">
+					<option value="low">Low</option>
+					<option value="medium">medium</option>
+					<option value="high">high</option>
+				</select>
+				
+					<button class="btn btn-primary" ng-click="addTodo(todo)">Submit</button>
+				
+				<br />
+	
 	<a ui-sref="old"><button class="btn btn-success">Check out old</button></a>
 
 	<ul class="list-group new-todos">
 		<li class="list-group-item" ng-repeat="todo in todos" ng-hide="old(todo) === true">	{{todo.title}} </li>
 	</ul>
 </div>
+

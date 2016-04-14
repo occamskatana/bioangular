@@ -4,7 +4,9 @@
 		$scope.todos = $firebaseArray(ref);
 
 		$scope.addTodo = function(todo){
-			$scope.todos.$add({title: todo, date: Firebase.ServerValue.TIMESTAMP, completed: false });
+			$scope.todos.$add({title: todo.title, date: Firebase.ServerValue.TIMESTAMP, completed: false, priority: todo.priority });
+			$scope.todo.title = '';
+			$scope.todo.priority = '';
 		}
 
 		$scope.old = function(todo){
@@ -12,6 +14,7 @@
 		}
 
 		$scope.todo;
+		
 	}
 
 	angular
