@@ -3,21 +3,35 @@
 
 
 <div class="container-fluid current-nav">
-	
-				<input type="text" ng-model="todo.title" class="" placeholder="Todo Name"><br></span><select name="Priority Select" ng-model="todo.priority">
+	<div class="todo-form well" align="center">
+		<form>
+			<div class="form-group">
+				<label>Enter a Todo Here!</label>
+				<input type="text" ng-model="todo.title" class="form-control" placeholder="Todo Name">
+			</div>
+			<div class="form-group">
+			<label>Select a Priority
+				<select name="Priority Select" placeholder="Select That Shit" ng-model="todo.priority" class="form-control">
 					<option value="low">Low</option>
 					<option value="medium">medium</option>
 					<option value="high">high</option>
 				</select>
-				
-					<button class="btn btn-primary" ng-click="addTodo(todo)">Submit</button>
-				
-				<br />
-	
-	<a ui-sref="old"><button class="btn btn-success">Check out old</button></a>
+			</div>
+			<button class="btn btn-primary" ng-click="addTodo(todo)">Submit</button>
+			<button class="btn btn-success" ui-sref="old">Check Out Old Todos</button>
+		</form>
+	</div>
+					
 
-	<ul class="list-group new-todos">
-		<li class="list-group-item" ng-repeat="todo in todos" ng-hide="old(todo) === true">	{{todo.title}} </li>
-	</ul>
+
+	<div class="container todo-list">
+		<ul class="list-group new-todos">
+			<li class="list-group-item" ng-repeat="todo in todos" ng-hide="old(todo) === true">
+				{{todo.title}}
+				<button class="btn btn-warning" ng-click="markComplete(todo)" ng-show="todo.completed == false">Mark Complete!</button>
+				<button class="btn btn-primary" ng-click="markIncomplete(todo)" ng-show="todo.completed == true">Mark Incomplete</button>
+			</li>
+		</ul>
+	</div>
 </div>
 

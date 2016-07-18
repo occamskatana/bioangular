@@ -14,6 +14,18 @@
 		}
 
 		$scope.todo;
+
+		$scope.markComplete = function(todo){
+			todo.completed = true;
+			$scope.todos.$save(todo)
+			console.log(todo)
+		}
+
+		$scope.markIncomplete = function(todo){
+			todo.completed = false;
+			$scope.todos.$save(todo)
+			console.log(todo)
+		}
 		
 	}
 
